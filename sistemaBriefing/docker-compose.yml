@@ -1,0 +1,13 @@
+version: '3.1'
+services:
+  db:
+    image: mysql
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: W_j#E@99
+    ports:
+      - "3386:3386"
+    volumes:
+      - systembriefing_data:/var/lib/mysql
+volumes:
+  systembriefing_data:
