@@ -19,7 +19,8 @@ import java.util.List;
 public class CargosControle {
 
     // Anotação
-   private static final CargosServico cargosServico = null;
+
+    private final CargosServico cargosServico;
 
     // Ler
 
@@ -41,14 +42,6 @@ public class CargosControle {
         return new ResponseEntity<>(cargosServico.cadastrarCargos(cargosPostRequestBody), HttpStatus.CREATED);
     }
 
-    @DeleteMapping(path ="/{id}")
-    public ResponseEntity<Void> deletarCargo(@PathVariable long id)
-    {
-        cargosServico.deletarCargo(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-    }
-
-
     @PutMapping(path = "/atualizarCargo")
     public ResponseEntity<Void> atualizarCargo(@RequestBody CargosPutRequestBody cargosPutRequestBody)
     {
@@ -56,4 +49,10 @@ public class CargosControle {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
+    @DeleteMapping(path ="/{id}")
+    public ResponseEntity<Void> deletarCargo(@PathVariable long id)
+    {
+        cargosServico.deletarCargo(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }

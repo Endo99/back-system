@@ -8,10 +8,10 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
+@Entity
 @Builder
 public class Usuario implements Serializable{
 
@@ -35,17 +35,4 @@ public class Usuario implements Serializable{
 
     private String senhaNovamente;
 
-    @Override
-    public String toString() {
-        return "Usuário {" +
-                "id=" + idUsuario +
-                ", nome='" + nome + '\'' +
-                ", sobrenome='" + sobrenome + '\'' +
-                ", email='" + email + '\'' +
-                ", telefone='" + telefone + '\'' +
-                ", cargo='" + cargo + '\'' +
-                ", senha='" + senha + '\'' +
-                ", senhaNovamente='" + senhaNovamente + '\''
-                + "}";
-    }
 }

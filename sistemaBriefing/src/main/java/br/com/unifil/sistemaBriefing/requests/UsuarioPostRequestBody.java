@@ -5,6 +5,8 @@ import lombok.Data;
 @Data
 public class UsuarioPostRequestBody {
 
+    private long idUsuario;
+
     private String nome;
 
     private String sobrenome;

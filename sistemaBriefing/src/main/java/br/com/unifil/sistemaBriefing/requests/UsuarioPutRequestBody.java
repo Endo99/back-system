@@ -1,6 +1,5 @@
 package br.com.unifil.sistemaBriefing.requests;
 
-
 import lombok.Data;
 
 @Data

@@ -32,15 +32,15 @@ public class UsuarioServico {
 
         return usuarioRepositorio.save(UsuarioMapper.INSTANCE.toUsuario(usuarioPostRequestBody));
     }
-
-    public void deletarUsuario(long id) {
-        usuarioRepositorio.delete(buscarPorIdUsuario(id));
-    }
-
     public void atualizarUsuario(UsuarioPutRequestBody usuarioPutRequestBody) {
         Usuario salvarUsuario = buscarPorIdUsuario(usuarioPutRequestBody.getIdUsuario());
         Usuario usuario = UsuarioMapper.INSTANCE.toUsuario(usuarioPutRequestBody);
         usuario.setIdUsuario(salvarUsuario.getIdUsuario());
         usuarioRepositorio.save(usuario);
     }
+
+    public void deletarUsuario(long id) {
+        usuarioRepositorio.delete(buscarPorIdUsuario(id));
+    }
+
 }

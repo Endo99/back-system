@@ -17,7 +17,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CargosServico {
 
-
     private final CargosRepositorio cargoRepositorio;
     public List<Cargos> listarTodos() {
         return cargoRepositorio.findAll();
@@ -25,7 +24,7 @@ public class CargosServico {
 
     public Cargos buscarPorId(long idCargo) {
         return  cargoRepositorio.findById(idCargo)
-                        .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Cargo não encontrado"));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Cargo não encontrado"));
     }
 
     public Cargos cadastrarCargos(CargosPostRequestBody cargosPostRequestBody)

@@ -2,7 +2,7 @@ package br.com.unifil.sistemaBriefing.requests;
 
 import lombok.Data;
 
-@Data(staticConstructor = "of")
+@Data
 public class CargosPutRequestBody {
 
     private long idCargo;
